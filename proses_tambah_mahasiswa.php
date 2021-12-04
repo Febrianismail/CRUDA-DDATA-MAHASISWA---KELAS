@@ -1,6 +1,6 @@
 <?php
 if ($_POST);
-// $id_mhs = $_POST['id_mhs'];
+$id_mhs = $_POST['id_mhs'];
 $nama = $_POST['nama'];
 $tanggal_lahir = $_POST['tanggal_lahir'];
 $jenis_kelamin = $_POST['jenis_kelamin'];

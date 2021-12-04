@@ -1,3 +1,6 @@
+<?php
+include "header.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +14,8 @@
     <center>
         <h3>Data Mahasiswa</h3>
     </center>
-
+    <a href="tambah_mahasiswa.php"> <input type="submit" name="simpan" value="Tambah data Mahasiswa" class="btn btn-primary">
+    </a>
     <table class="table table-hover table-striped">
         <thead>
             <tr>
@@ -44,7 +48,7 @@
                     <td><?= $data_mahasiswa['nama_jurusan'] ?></td>
 
                     <td><a href="ubah_mahasiswa.php?id_mhs=<?= $data_mahasiswa['id_mhs'] ?>" class="btn btn-success">
-                            ubah</a> | <a href="hapus_mhs.php?id_mhs=<?= $data_mahasiswa['id_mhs'] ?>" onclick='return confirm(" apakah anda yakin menghapus data ini ")' class="btn btn-danger">Hapus</a>
+                            ubah</a> | <a href="hapus_mhs.php?id_mhs<?= $data_mahasiswa['id_mhs'] ?>" onclick='return confirm(" apakah anda yakin menghapus data ini ")' class="btn btn-danger">Hapus</a>
                     </td>
                 <?php
             }

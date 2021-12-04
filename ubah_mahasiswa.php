@@ -7,10 +7,9 @@
 </head>
 
 <body>
-
     <?php
     include "koneksi.php";
-    $qry_get_mahasiswa = mysqli_query($conn, "SELECT * FROM `mahasiswa` WHERE `id_mhs`='" . $_GET['id_mhs'] . "'");
+    $qry_get_mahasiswa = mysqli_query($conn, "select * from mahasiswa where id_mhs = '" . $_GET['id_mhs'] . "'");
     $dt_mahasiswa = mysqli_fetch_array($qry_get_mahasiswa);
     ?>
     <h3>Ubah Data</h3>

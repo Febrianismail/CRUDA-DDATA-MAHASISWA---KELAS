@@ -1,3 +1,6 @@
+<?php
+include "header.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -8,6 +11,8 @@
 
 <body>
     <h3>Data Jurusan</h3>
+    <a href="tambah_jurusan.php"> <input type="submit" name="simpan" value="Tambah data Jurusan" class="btn btn-primary">
+    </a>
     <table class="table table-hover table-striped">
         <thead>
             <tr>

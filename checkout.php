@@ -1,0 +1,15 @@
+<?php
+session_start();
+include "koneksi.php";
+$cart = @$_SESSION['cart'];
+if (count($cart) > 0) {
+    $lama_pinjam = 5;
+    $tgl_harus_kembali = date('y-m-d', mktime(0, 0, 0, date('m'), (date('d') + $lama_pinjam), date('y')));
+    mysqli_query($conn, "insert into peminjaman_buku ( id_mhs,tanggal_pinjam,tanggal_kembali) value('" . $_SESSION['id_mhs'] . "','" . date('y-m-d') . "','" . $tgl_harus_kembali . "')");
+    $id = mysqli_insert_id($conn);
+    foreach ($cart as $key_produk => $val_produk) {
+        mysqli_query($conn, "insert into detail_peminjaman_buku (id_peminjaman_buku,id_buku,qty) value('" . $id . "','" . $val_produk['id_buku'] . "','" . $val_produk['qty'] . "')");
+    }
+    unset($_SESSION['cart']);
+    echo '<script>alert("anda berhasil meminjam buku");location.href="histori_peminjaman.php"</script>';
+}

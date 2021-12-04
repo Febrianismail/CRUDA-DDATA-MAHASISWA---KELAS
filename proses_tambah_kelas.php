@@ -4,18 +4,18 @@ if ($_POST) {
     $angkatan = $_POST['angkatan'];
     if (empty($nama_jurusan)) {
         echo "<script>alert('Nama jurusan tidak 
-        boleh kosong');location.href='tambah_kelas.php';</script>";
+        boleh kosong');location.href='tambah_jurusan.php';</script>";
     } elseif (empty($angkatan)) {
         echo "<script>alert('Angkatan tidak boleh kosong');
-        location.href='tambah_kelas.php';</script>";
+        location.href='tambah_jurusan.php';</script>";
     } else {
         include "koneksi.php";
         $insert = mysqli_query($conn, "insert into jurusan (nama_jurusan, angkatan) value ('" .
             $nama_jurusan . "','" . $angkatan . "')");
         if ($insert) {
-            echo "<script>alert('Sukses menambahakan data jurusan');location.href='tambah_kelas.php';</script>";
+            echo "<script>alert('Sukses menambahakan data jurusan');location.href='tampil_jurusan.php';</script>";
         } else {
-            echo "<script>alert('Gagal menambahakan data jurusan');location.href='tambah_kelas.php';</script>";
+            echo "<script>alert('Gagal menambahakan data jurusan');location.href='tambah_jurusan.php';</script>";
         }
     }
 }
